@@ -33,12 +33,16 @@
                             <td>{{ $project->tools }}</td>
                             <td>{{ $project->creation_date }}</td>
                             <td>
-                                <a href="{{ route('admin.projects.show', $project) }}">View</a>
-                                <a href="{{ route('admin.projects.edit', $project) }}">Edit</a>
+                                <a class="btn btn-primary" href="{{ route('admin.projects.show', $project) }}">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+                                <a class="btn btn-warning" href="{{ route('admin.projects.edit', $project) }}">
+                                    <i class="fa-solid fa-pencil"></i>
+                                </a>
 
                                 <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                                     data-bs-target="#modalId-{{ $project->id }}">
-                                    Delete
+                                    <i class="fa-solid fa-xmark"></i>
                                 </button>
 
                                 <!-- Modal Body -->
