@@ -34,8 +34,9 @@
                             <td>{{ $project->creation_date }}</td>
                             <td>
                                 <a href="{{ route('admin.projects.show', $project) }}">View</a>
+                                <a href="{{ route('admin.projects.edit', $project) }}">Edit</a>
 
-                                Edit Delete
+
                             </td>
                         </tr>
 
