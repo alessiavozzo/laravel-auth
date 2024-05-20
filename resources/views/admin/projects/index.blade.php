@@ -30,7 +30,11 @@
                             </td>
                             <td>{{ $project->tools }}</td>
                             <td>{{ $project->creation_date }}</td>
-                            <td>View Edit Delete</td>
+                            <td>
+                                <a href="{{ route('admin.projects.show', $project) }}">View</a>
+
+                                Edit Delete
+                            </td>
                         </tr>
 
                     @empty
