@@ -14,10 +14,10 @@
                 <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" id="title"
                     aria-describedby="titleHelper" placeholder="title" value="{{ old('title') }}" />
                 <small id="titleHelper" class="form-text text-muted">Write the project title</small>
+                @error('title')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
-            @error('title')
-                <div class="text-danger">{{ $message }}</div>
-            @enderror
 
             {{-- slug --}}
             {{-- lo slug lo genero dietro le quinte, non devo inserirlo io --}}
@@ -29,10 +29,10 @@
                     id="project_image" aria-describedby="project_imageHelper" placeholder="project_image"
                     value="{{ old('project_image') }}" />
                 <small id="project_imageHelper" class="form-text text-muted">Add a link to project image</small>
+                @error('project_image')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
-            @error('project_image')
-                <div class="text-danger">{{ $message }}</div>
-            @enderror
 
             {{-- tools --}}
             <div class="mb-3">
@@ -40,10 +40,10 @@
                 <input type="text" class="form-control @error('tools') is-invalid @enderror" name="tools"
                     id="tools" aria-describedby="toolsHelper" placeholder="tools" value="{{ old('tools') }}" />
                 <small id="toolsHelper" class="form-text text-muted">Write the tools you used for the project</small>
+                @error('tools')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
-            @error('tools')
-                <div class="text-danger">{{ $message }}</div>
-            @enderror
 
             {{-- creation date --}}
             <div class="mb-3">
@@ -52,19 +52,19 @@
                     id="creation_date" aria-describedby="creation_dateHelper" placeholder="creation_date"
                     value="{{ old('creation_date') }}" />
                 <small id="creation_dateHelper" class="form-text text-muted">Add the date the project was created</small>
+                @error('creation_date')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
-            @error('creation_date')
-                <div class="text-danger">{{ $message }}</div>
-            @enderror
 
             {{-- description --}}
             <div class="mb-3">
                 <label for="description" class="form-label @error('description') is-invalid @enderror">description</label>
                 <textarea class="form-control" name="description" id="description" rows="8">{{ old('description') }}</textarea>
+                @error('description')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
-            @error('description')
-                <div class="text-danger">{{ $message }}</div>
-            @enderror
 
             <button type="submit">Add project</button>
 

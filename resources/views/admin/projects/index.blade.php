@@ -5,6 +5,8 @@
         {{-- @dd($projects) --}}
         <h1>My Projects</h1>
 
+        <a class="btn btn-primary" href="{{ route('admin.projects.create') }}">Add new project</a>
+
         <div class="table-responsive">
             <table class="table table-light">
                 <thead>
