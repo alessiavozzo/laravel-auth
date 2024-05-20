@@ -18,3 +18,5 @@ Implementiamo la validazione dei dati dei Progetti nelle operazioni CRUD che lo 
 - npm run dev + php artisan serve
 
 - Creo un controller per gestire le richieste alla dashboard e aggiorno la rotta in web.php
+
+- Creo il modello Project con migrazione, seeder, controller e form requests + aggiornamento rotte
