@@ -1,21 +1,21 @@
 @extends('layouts.admin')
 
 @section('content')
-    <section id="all_projects">
-
-        <div class="projects_header bg-dark py-2">
-            <div class="container d-flex justify-content-between align-items-center">
-                <h1 class="text-light">My Projects</h1>
-                <a class="btn btn-primary" href="{{ route('admin.projects.create') }}">Add new project</a>
-            </div>
+    <div class="projects_header bg-section-dark py-2">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="text-light">My Projects</h1>
+            <a class="btn btn-primary" href="{{ route('admin.projects.create') }}">Add new project</a>
         </div>
+    </div>
+    <section id="all_projects" class="py-3 bg-section">
 
-        <div class="container py-5">
+
+        <div class="container">
             {{-- @dd($projects) --}}
 
             @include('admin.partials.session-messages')
             <div class="table-responsive rounded">
-                <table class="table table-light table-hover table-bordered">
+                <table class="table table-secondary table-hover">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
@@ -40,8 +40,9 @@
                                     <img width="100" src="{{ $project->project_image }}" alt="{{ $project->title }}">
                                 </td>
                                 {{-- <td>{{ $project->tools }}</td> --}}
-                                <td><a href="{{ $project->project_link }}">Project link</a></td>
-                                <td><a href="{{ $project->github_link }}">Github link</a></td>
+                                <td><a class="text-decoration-none" href="{{ $project->project_link }}">Project link</a>
+                                </td>
+                                <td><a class="text-decoration-none" href="{{ $project->github_link }}">Github link</a></td>
                                 <td>{{ $project->creation_date }}</td>
                                 <td style="width: 15%">
                                     <a class="btn btn-primary" href="{{ route('admin.projects.show', $project) }}">
@@ -53,7 +54,7 @@
 
                                     <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                                         data-bs-target="#modalId-{{ $project->id }}">
-                                        <i class="fa-solid fa-xmark"></i>
+                                        <i class="fa-solid fa-trash"></i>
                                     </button>
 
                                     @include('admin.partials.modal-delete')
