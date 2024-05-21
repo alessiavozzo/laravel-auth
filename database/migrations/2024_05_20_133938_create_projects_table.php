@@ -16,7 +16,9 @@ return new class extends Migration
             $table->string('title', 100)->unique();
             $table->string('slug', 100);
             $table->string('project_image')->nullable();
-            $table->string('tools')->nullable();
+            $table->string('project_link');
+            $table->string('github_link');
+            /* $table->string('tools')->nullable(); */
             $table->date('creation_date')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();

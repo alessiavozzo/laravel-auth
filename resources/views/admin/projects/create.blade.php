@@ -35,12 +35,36 @@
             </div>
 
             {{-- tools --}}
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label for="tools" class="form-label">tools</label>
                 <input type="text" class="form-control @error('tools') is-invalid @enderror" name="tools"
                     id="tools" aria-describedby="toolsHelper" placeholder="tools" value="{{ old('tools') }}" />
                 <small id="toolsHelper" class="form-text text-muted">Write the tools you used for the project</small>
                 @error('tools')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div> --}}
+
+            {{-- project link --}}
+            <div class="mb-3">
+                <label for="project_link" class="form-label">Project link</label>
+                <input type="text" class="form-control @error('project_link') is-invalid @enderror" name="project_link"
+                    id="project_link" aria-describedby="project_linkHelper" placeholder="project_link"
+                    value="{{ old('project_link') }}" />
+                <small id="project_linkHelper" class="form-text text-muted">Add project link</small>
+                @error('project_link')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
+
+            {{-- github link --}}
+            <div class="mb-3">
+                <label for="github_link" class="form-label">Github link</label>
+                <input type="text" class="form-control @error('github_link') is-invalid @enderror" name="github_link"
+                    id="github_link" aria-describedby="github_linkHelper" placeholder="github_link"
+                    value="{{ old('github_link') }}" />
+                <small id="github_linkHelper" class="form-text text-muted">Add github link</small>
+                @error('github_link')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>

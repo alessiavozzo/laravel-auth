@@ -15,7 +15,9 @@
                         <th scope="col">TITLE</th>
                         <th scope="col">SLUG</th>
                         <th scope="col">PROJECT IMAGE</th>
-                        <th scope="col">TOOLS</th>
+                        {{-- <th scope="col">TOOLS</th> --}}
+                        <th scope="col">PROJECT LINK</th>
+                        <th scope="col">GITHUB LINK</th>
                         <th scope="col">CREATION DATE</th>
                         <th scope="col">ACTIONS</th>
                     </tr>
@@ -30,7 +32,9 @@
                             <td>
                                 <img width="150" src="{{ $project->project_image }}" alt="{{ $project->title }}">
                             </td>
-                            <td>{{ $project->tools }}</td>
+                            {{-- <td>{{ $project->tools }}</td> --}}
+                            <td>{{ $project->project_link }}</td>
+                            <td>{{ $project->github_link }}</td>
                             <td>{{ $project->creation_date }}</td>
                             <td>
                                 <a class="btn btn-primary" href="{{ route('admin.projects.show', $project) }}">
