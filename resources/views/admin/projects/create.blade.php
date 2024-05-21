@@ -1,9 +1,12 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container">
-
-        <h2>New project</h2>
+    <div class="projects_header bg-dark py-2">
+        <div class="container">
+            <h2 class="text-light">New project</h2>
+        </div>
+    </div>
+    <div class="container py-3">
 
         <form action="{{ route('admin.projects.store') }}" method="post">
             @csrf
@@ -90,7 +93,7 @@
                 @enderror
             </div>
 
-            <button type="submit">Add project</button>
+            <button class="btn btn-primary" type="submit">Add project</button>
 
 
         </form>

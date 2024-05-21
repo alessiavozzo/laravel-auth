@@ -1,9 +1,12 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container">
-
-        <h2>New project</h2>
+    <div class="projects_header bg-dark py-2">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h2 class="text-light">Edit project {{ $project->title }}</h2>
+        </div>
+    </div>
+    <div class="container py-3">
 
         <form action="{{ route('admin.projects.update', $project) }}" method="post">
             @csrf
@@ -93,7 +96,7 @@
                 @enderror
             </div>
 
-            <button type="submit">Edit project</button>
+            <button class="btn btn-primary" type="submit">Edit project</button>
 
 
         </form>
