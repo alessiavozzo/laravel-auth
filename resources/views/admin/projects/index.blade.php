@@ -5,6 +5,13 @@
         {{-- @dd($projects) --}}
         <h1>My Projects</h1>
 
+        @if (session('message'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                {{ session('message') }}
+            </div>
+        @endif
+
         <a class="btn btn-primary" href="{{ route('admin.projects.create') }}">Add new project</a>
 
         <div class="table-responsive">
@@ -30,7 +37,7 @@
                             <td>{{ $project->title }}</td>
                             <td>{{ $project->slug }}</td>
                             <td>
-                                <img width="150" src="{{ $project->project_image }}" alt="{{ $project->title }}">
+                                <img width="100" src="{{ $project->project_image }}" alt="{{ $project->title }}">
                             </td>
                             {{-- <td>{{ $project->tools }}</td> --}}
                             <td>{{ $project->project_link }}</td>
