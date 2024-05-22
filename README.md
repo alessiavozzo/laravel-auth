@@ -23,3 +23,7 @@ Implementiamo la validazione dei dati dei Progetti nelle operazioni CRUD che lo 
 - Compilo tabella da migrare + seeder
 - Inserisco nel gruppo di rotte l'insieme di rotte che gestiscono le crud
 - CRUD
+
+- Modifico file .env: FILESYSTEM_DISK=public
+- In config/filesystems.php switcho il disco da local a public: 'default' => env('FILESYSTEM_DISK', 'public')
+- php artisan storage:link
