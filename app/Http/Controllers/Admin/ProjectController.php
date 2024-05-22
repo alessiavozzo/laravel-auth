@@ -69,6 +69,15 @@ class ProjectController extends Controller
         $val_data = $request->validated();
         $slug = Str::slug($request->title, '-');
         $val_data['slug'] = $slug;
+
+        if($request->has('project_image')){
+            if($project->project_image){
+                Storage::delete($project->project_image);
+            }
+            $img_path = Storage::put('uploads', $val_data['project_image']);
+            $val_data['project_image'] = $img_path;
+        }
+
         $project->update($val_data);
         return to_route('admin.projects.index')->with('message', "Project $project->title updated successfully");
     }

@@ -9,7 +9,8 @@
     <section id="edit_form" class="py-3 bg-section">
         <div class="container">
 
-            <form class="form-control bg-light p-4" action="{{ route('admin.projects.update', $project) }}" method="post">
+            <form class="form-control bg-light p-4" action="{{ route('admin.projects.update', $project) }}" method="post"
+                enctype="multipart/form-data">
                 @csrf
 
                 @method('PUT')
@@ -30,11 +31,22 @@
                 {{-- lo slug lo genero dietro le quinte, non devo inserirlo io --}}
 
                 {{-- project image --}}
-                <div class="mb-3">
+                {{-- <div class="mb-3">
                     <label for="project_image" class="form-label">project_image</label>
                     <input type="text" class="form-control @error('project_image') is-invalid @enderror"
                         name="project_image" id="project_image" aria-describedby="project_imageHelper"
                         placeholder="project_image" value="{{ old('project_image', $project->project_image) }}" />
+                    <small id="project_imageHelper" class="form-text text-muted">Add a link to project image</small>
+                    @error('project_image')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div> --}}
+
+                <div class="mb-3">
+                    <label for="project_image" class="form-label">project_image</label>
+                    <input type="file" class="form-control @error('project_image') is-invalid @enderror"
+                        name="project_image" id="project_image" aria-describedby="project_imageHelper"
+                        placeholder="project_image" />
                     <small id="project_imageHelper" class="form-text text-muted">Add a link to project image</small>
                     @error('project_image')
                         <div class="text-danger">{{ $message }}</div>
