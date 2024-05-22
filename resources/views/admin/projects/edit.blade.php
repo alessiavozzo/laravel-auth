@@ -53,6 +53,17 @@
                     @enderror
                 </div>
 
+                <div class="mb-3">
+                    <label for="preview" class="form-label">preview</label>
+                    <input type="text" class="form-control @error('preview') is-invalid @enderror" name="preview"
+                        id="preview" aria-describedby="previewHelper" placeholder="preview"
+                        value="{{ old('preview', $project->preview) }}" />
+                    <small id="previewHelper" class="form-text text-muted">Add preview</small>
+                    @error('preview')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+
                 {{-- tools --}}
                 {{-- <div class="mb-3">
                     <label for="tools" class="form-label">tools</label>

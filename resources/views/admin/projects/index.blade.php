@@ -50,7 +50,7 @@
                                 </td>
                                 <td>
                                     @if ($project->preview)
-                                        <div class="try">
+                                        <div class="preview">
                                             <iframe width="140" height="80" src="{{ $project->preview }}"
                                                 frameborder="0" allowfullscreen></iframe>
                                         </div>

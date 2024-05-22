@@ -37,6 +37,15 @@
                     <p class="card-text"><strong>DESCRIPTION: </strong>{{ $project->description }}</p>
                     {{-- <p class="card-text"><strong>TOOLS: </strong>{{ $project->tools }}</p> --}}
                     <p class="card-text"><strong>CREATION DATE: </strong>{{ $project->creation_date }}</p>
+
+
+                    @if ($project->preview)
+                        <div class="card-text">
+                            <strong>PREVIEW: </strong><br>
+                            <iframe width="300" height="200" src="{{ $project->preview }}" frameborder="0"
+                                allowfullscreen></iframe>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
