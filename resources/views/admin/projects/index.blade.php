@@ -48,14 +48,7 @@
                                             alt="{{ $project->title }}">
                                     @endif
                                 </td>
-                                <td>
-                                    @if ($project->preview)
-                                        <div class="preview">
-                                            <iframe width="140" height="80" src="{{ $project->preview }}"
-                                                frameborder="0" allowfullscreen></iframe>
-                                        </div>
-                                    @endif
-                                </td>
+                                <td><a class="text-decoration-none" href="{{ $project->preview }}">Video link</a></td>
                                 {{-- <td>{{ $project->tools }}</td> --}}
                                 <td><a class="text-decoration-none" href="{{ $project->project_link }}">Project link</a>
                                 </td>
