@@ -37,7 +37,15 @@
                                 <td>{{ $project->title }}</td>
                                 <td>{{ $project->slug }}</td>
                                 <td>
-                                    <img width="100" src="{{ $project->project_image }}" alt="{{ $project->title }}">
+                                    {{-- <img width="100" src="{{ $project->project_image }}" alt="{{ $project->title }}"> --}}
+                                    @if (Str::startsWith($project->project_image, 'https://'))
+                                        <img width="100" loading="lazy" src="{{ $project->project_image }}"
+                                            alt="{{ $project->title }}">
+                                    @else
+                                        <img width="100" loading="lazy"
+                                            src="{{ asset('storage/' . $project->project_image) }}"
+                                            alt="{{ $project->title }}">
+                                    @endif
                                 </td>
                                 {{-- <td>{{ $project->tools }}</td> --}}
                                 <td><a class="text-decoration-none" href="{{ $project->project_link }}">Project link</a>
