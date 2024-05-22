@@ -20,7 +20,14 @@
     <section id="project" class="py-3 bg-section">
         <div class="container">
             <div class="card w-50 mx-auto bg-light">
-                <img class="card-img-top" src="{{ $project->project_image }}" alt="{{ $project->title }}" />
+
+                @if (Str::startsWith($project->project_image, 'https://'))
+                    <img class="card-img-top" src="{{ $project->project_image }}" alt="{{ $project->title }}" />
+                @else
+                    <img width="card-img-top" loading="lazy" src="{{ asset('storage/' . $project->project_image) }}"
+                        alt="{{ $project->title }}">
+                @endif
+
                 <div class="card-body">
                     <h4 class="card-title text-center">{{ $project->title }}</h4>
                     <p class="card-text"><strong>ID: </strong>{{ $project->id }}</p>
