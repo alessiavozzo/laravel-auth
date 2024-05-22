@@ -22,6 +22,7 @@
                             <th scope="col">TITLE</th>
                             <th scope="col">SLUG</th>
                             <th scope="col">PROJECT IMAGE</th>
+                            <th scope="col">PREVIEW</th>
                             {{-- <th scope="col">TOOLS</th> --}}
                             <th scope="col">PROJECT LINK</th>
                             <th scope="col">GITHUB LINK</th>
@@ -45,6 +46,14 @@
                                         <img width="100" loading="lazy"
                                             src="{{ asset('storage/' . $project->project_image) }}"
                                             alt="{{ $project->title }}">
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($project->preview)
+                                        <div class="try">
+                                            <iframe width="140" height="80" src="{{ $project->preview }}"
+                                                frameborder="0" allowfullscreen></iframe>
+                                        </div>
                                     @endif
                                 </td>
                                 {{-- <td>{{ $project->tools }}</td> --}}
